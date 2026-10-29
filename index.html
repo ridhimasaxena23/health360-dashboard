@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health360 | Healthcare Risk Analytics</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div><p class="eyebrow">HEALTH360 • ACADEMIC DEMO</p><h1>Healthcare Risk & Disease Analytics</h1><p class="sub">An interactive dashboard for exploring chronic disease risk patterns.</p></div>
+      <div class="badge">● Demo data<br><small>Educational use only</small></div>
+    </header>
+
+    <section class="controls" aria-label="Dashboard filters">
+      <label>Age group <select id="age"><option value="All">All groups</option><option>18–34</option><option>35–49</option><option>50–64</option><option>65+</option></select></label>
+      <label>Risk focus <select id="risk"><option value="All">All conditions</option><option>Heart Disease</option><option>Diabetes</option><option>Stroke</option></select></label>
+      <button id="reset">Reset filters</button>
+    </section>
+
+    <section class="kpis">
+      <article><span>Patients analysed</span><strong id="patients">1,248</strong><small>synthetic records</small></article>
+      <article><span>High-risk patients</span><strong id="highRisk">28.6%</strong><small>requiring attention</small></article>
+      <article><span>Average BMI</span><strong id="bmi">27.4</strong><small>kg/m²</small></article>
+      <article><span>Exercise target met</span><strong id="exercise">41%</strong><small>150+ min / week</small></article>
+    </section>
+
+    <section class="grid">
+      <article class="card wide"><div class="card-title"><div><h2>Disease prevalence by age group</h2><p>Percentage of patients with recorded condition</p></div><span class="legend"><i class="heart"></i>Heart <i class="diabetes"></i>Diabetes <i class="stroke"></i>Stroke</span></div><div id="barChart" class="bar-chart"></div></article>
+      <article class="card"><h2>Risk distribution</h2><p>Overall clinical risk classification</p><div class="donut"><div><strong id="donutValue">29%</strong><small>high risk</small></div></div><ul class="risk-list"><li><b class="low"></b>Low <span>36%</span></li><li><b class="medium"></b>Moderate <span>35%</span></li><li><b class="high"></b>High <span>29%</span></li></ul></article>
+      <article class="card"><h2>Key risk factors</h2><p>Share of high-risk population</p><div id="factors" class="factors"></div></article>
+      <article class="card explorer"><div><h2>Personal risk explorer</h2><p>Try sample values to see an educational risk indicator.</p><label>Age <input id="patientAge" type="range" min="18" max="85" value="48"><output id="ageOutput">48 years</output></label><label>BMI <input id="patientBmi" type="range" min="16" max="42" step="0.1" value="27.4"><output id="bmiOutput">27.4</output></label><label class="check"><input id="bp" type="checkbox"> High blood pressure</label><label class="check"><input id="smoking" type="checkbox"> Smoker</label></div><div class="score-box"><span>Educational risk</span><strong id="score">Moderate</strong><b id="scorePercent">44 / 100</b><p id="recommendation">Build activity into the week and keep routine screening appointments.</p></div></article>
+      <article class="card wide insights"><h2>Health insights</h2><div id="insights"></div><aside><h3>About this project</h3><p>This dashboard demonstrates how demographic, clinical and lifestyle indicators can help identify vulnerable patient segments.</p><p class="warning">Not for clinical diagnosis. All values are simulated for an academic project.</p></aside></article>
+    </section>
+    <footer>Health360 • Data Analytics with Tableau concept • Built as a web dashboard for course demonstration</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
